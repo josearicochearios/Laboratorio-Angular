@@ -1,0 +1,12 @@
+#hel {
+    color: red;
+}
+
+:host {
+    display: block;
+    border: 3px solid black
+}
+
+#rojo {
+    color: red;
+}

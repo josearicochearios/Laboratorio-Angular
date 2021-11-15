@@ -1,0 +1,329 @@
+<div class="card" style="background-color: azure">
+  <h2>Componentes</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>vacio</h3>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Interpolación de texto</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Texto</h3>
+    {{title}}
+    <h3>Operacion Matematica</h3>
+    EL resultado es : {{5+3}}
+    <h3>Menor Numero</h3>
+    EL Menor Numero es : {{getMin(5, 3)}}
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Comunicación de componentes</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <app-parent></app-parent>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Componetes de estilos</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3 id="hel">Hola Mundo</h3>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Ng-Content</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <ng-content [question]></ng-content>
+    <ng-content [answer]></ng-content>
+    <h3 question>Es ng-content genial?</h3>
+    <p answer>oh si!</p>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Declaraciónes de plantilla</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <button (click)="toggleText($event)">Alterar texto</button>
+    {{showText}}
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Pipes</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Fecha completa</h3>
+    {{todaysDate}}
+    <h3>Fecha</h3>
+    {{todaysDate | date}}
+    <h3>Fecha corta</h3>
+    {{todaysDate | date : 'short'}}
+    <h3>Fecha larga</h3>
+    {{todaysDate | date : 'long'}}
+    <h3>Fecha Personalizada</h3>
+    {{todaysDate | date : 'EEEE MMMM d y'}}
+    <h3>Fecha Personalizada en mayuscula</h3>
+    {{todaysDate | date : 'EEEE MMMM d y' | uppercase}}
+    <h3>Texto</h3>
+    {{ 'Mundo' | greetingsPipe}}
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Vinculación de propiedad</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Imagen</h3>
+    <img [src]="itemImageUrl">
+    <h3>Texto</h3>
+    <table>
+      <tr>
+        <td [colSpan]="1 + 1">Tres-Cuatro</td>
+      </tr>
+    </table>
+    <h3>Boton desabilitado</h3>
+    <button [disabled]="isUnchanged">Preciona</button>
+    <h3>Interpolacion</h3>
+    <p><img src="{{itemImageUrl}}"></p>
+    <h3>Enlace de utileria</h3>
+    <p><img [src]="itemImageUrl"></p>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Enlace de eventos</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Boton</h3>
+    <button (click)="onSave">Guardar</button>
+    <h3>item-details</h3>
+    <app-items-details (deleteRequest)="deleteItem($event)"></app-items-details>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Enlace bidireccional</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>aumentar</h3>
+    <!-- <app-sizer [(size)]="fontSizepx"></app-sizer> -->
+    <div [style.font-size.px]="fontSizepx">Texto ajustable</div>
+    <h3>ingresar Numero</h3>
+    <input #phone placeholder="phone">
+    <button (click)="callPhone(phone.value)">llamar</button>
+    <h3>ingresar texto</h3>
+    <!-- <input *ngIf="true" #ref1 type="text" [(ngModel)]="firstExample"> -->
+    <!-- <span>{{ref1.value}}</span> -->
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Directivas</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>especial</h3>
+    <div [ngClass]="isSpecial ? 'special' : ''">
+      Ejemplo01
+    </div>
+    <h3>Clase</h3>
+    <div [ngClass]="currentClasses">
+      Ejemplo02
+    </div>
+    <h3>Estilo</h3>
+    <div [ngStyle]="currentStyle">
+      Ejemplo03
+    </div>
+    <h3>Estilo</h3>
+    <label for="ejemplo">{{name}}</label>
+    <input [(ngModel)]="name" id="ejemplo">
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Atributo de directivas</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Fondo</h3>
+    <p appHighlight>Prueba</p>
+    <h3>Fondo 2</h3>
+    <div>
+      <!-- <p [appHighlight="'red'"]>Prueba</p> -->
+    </div>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Directivas estructurales</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Boleano activado</h3>
+    <div *ngIf="isActive">Activo</div>
+    <h3>Lista</h3>
+    <div *ngFor="let item of items">{{item.name}}</div>
+    <h3>Lista enumerada</h3>
+    <div *ngFor="let item of items; let i = index">{{i}} - {{item.name}}</div>
+    <h3>Boleano activado</h3>
+    <div [ngSwitch]="item.name">
+      <div *ngSwitchCase="'Carlos'"> hola tu</div>
+      <div *ngSwitchCase="'Luisa'"> hola ustedes</div>
+      <div *ngSwitchDefault=>Hola amigos</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Injección de dependencia</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Texto</h3>
+    <h1 id="rojo">Hola Mundo</h1>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Routing</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Texto</h3>
+    <h1>Angular router app</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="/first-component/1">Primer Componente</a></li>
+        <li><a routerLink="/second-component">Segundo Componente</a></li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Formulario basado en plantillas</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Formulario</h3>
+    <form>
+      <div>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" required>
+      </div>
+      <div>
+        <label for="species">Especies</label>
+        <select id="species" required>
+          <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+        </select>
+      </div>
+    </form>
+    <h3>Formulario 2</h3>
+    <p>{{model | json}}</p>
+    <form #petForm="ngForm">
+      <div>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" required [(ngModel)]="model.name" name=name>
+      </div>
+      <div>
+        <label for="species">Especies</label>
+        <select id="species" required [(ngModel)]="model.specie" name="specie">
+          <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+        </select>
+      </div>
+    </form>
+    <h3>Formulario con Boton</h3>
+    <form #petForm="ngForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" required [(ngModel)]="model.name" name=name>
+      </div>
+      <div>
+        <label for="species">Especies</label>
+        <select id="species" required [(ngModel)]="model.specie" name="specie">
+          <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+        </select>
+      </div>
+      <button [disabled]="!petForm.form.valid" type="submit">Enviar</button>
+    </form>
+    <h3>Formulario con Boton y esconder Formulario</h3>
+    <div [hidden]="submited">
+      <form #petForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Nombre</label>
+          <input type="text" id="name" required [(ngModel)]="model.name" name=name>
+        </div>
+        <div>
+          <label for="species">Especies</label>
+          <select id="species" required [(ngModel)]="model.specie" name="specie">
+            <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+          </select>
+        </div>
+        <button [disabled]="!petForm.form.valid" type="submit">Enviar</button>
+      </form>
+    </div>
+    <h3>Formulario con Boton y esconder Formulario con mensaje y editar</h3>
+    <div [hidden]="submited">
+      <form #petForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Nombre</label>
+          <input type="text" id="name" required [(ngModel)]="model.name" name=name>
+        </div>
+        <div>
+          <label for="species">Especies</label>
+          <select id="species" required [(ngModel)]="model.specie" name="specie">
+            <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+          </select>
+        </div>
+        <button [disabled]="!petForm.form.valid" type="submit">Enviar</button>
+      </form>
+    </div>
+    <div [hidden]="!submited">
+      <h2> Tu has Enviado</h2>
+      <p>Nombre: {{model.name}}</p>
+      <p>Especie: {{model.specie}}</p>
+      <button (click)="submited = false">Editar</button>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Formulario reactivo</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Formulario</h3>
+    <label for="name">Nombre: </label>
+    <input id="name" type="text" [formControl]="nameb">
+    <p>Valor: {{nameb.value}}</p>
+    <h3>Formulario con Boton</h3>
+    <label for="name">Nombre: </label>
+    <input id="name" type="text" [formControl]="namec">
+    <p>Valor: {{namec.value}}</p>
+    <p>
+      <button (click)="updateName()">Actualizar</button>
+    </p>
+    <h3>Formulario 3</h3>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmitb()">
+      <label for="first-name">Nombres: </label>
+      <input id="firs-name" type="text" formControlName="firstName">
+      <label for="last-name">Apellidos: </label>
+      <input id="last-name" type="text" formControlName="lastName">
+      <button type="submit" [disabled]="!profileForm.valid">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<div class="card" style="background-color: azure">
+  <h2>Validacion del Formulario</h2>
+  <div class="card" style="position: relative; left: 5%;">
+    <h3>Formulario 1</h3>
+    <form>
+      <input type="text" name="named" required minlength="4" [(ngModel)]="nameInput" #named="ngModel">
+      <div *ngIf="named.invalid && (named.dirty || named.touched)">
+        <div *ngIf="named.errors?.required">
+          Se requiere nombre
+        </div>
+        <div *ngIf="named.errors?.minlength">
+          Nombre debe tener mas de 4  caracteres
+        </div>
+      </div>
+    </form>
+    <h3>Formulario 2</h3>
+    <form [formGroup]="validationForm">
+      <input type="text" name="named" required minlength="4" formControlName=named>
+      <div *ngIf="named.invalid && (named.dirty || named.touched)">
+        <div *ngIf="named.errors?.required">
+          Se requiere nombre
+        </div>
+        <div *ngIf="named.errors?.minlength">
+          Nombre debe tener mas de 4  caracteres
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
