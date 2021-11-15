@@ -1,2 +1,2 @@
-# josearicochearios-github.io
+# josearicochearios.github.io
 practica con angular
